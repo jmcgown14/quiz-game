@@ -1,29 +1,35 @@
 // Variables for Questions, correct vs incorrect, timer, and start button
 var onScreenTimer
 var startButton = document.querySelector(".start-button")
-var allQuestion = [{
-    question: 'What symbol is used to comment in javascript?',
-    choices: {
-        incorrect: ['?', '!'],
-        correct: '/',
-    }
-}, {
-    question: 'What is it called when you pre-write your code?',
-    choices: {
-        incorrect: ['Pre-Coding', 'Spider-Webbing'],
-        correct: 'Psuedo Coding',
-    }
-}, {
-    question: 'What does this === mean?',
-    choices: ['Similar', 'Not Equal', 'Strictly Equal'],
-    }
-]
-    // 'What symbol is used to comment in javascript?': ['?', '/', '!', 0],
-    // 'What is it called when you pre-write your code?': ['Psuedo Coding', 'Pre-Coding', 'Spider-Webbing', 1],
-    // 'What does this === mean?': ['Equal', 'Strictly Equal', 'Same As', 2],
+var correct = document.querySelector(".correct")
+var incorrect = document.querySelector(".incorrect")
 
-var timer;
-var timerCount;
+var allQuestion = {
+    'What symbol is used to comment in javascript?': ['?', '/', '!', 0],
+    'What is it called when you pre-write your code?': ['Psuedo Coding', 'Pre-Coding', 'Spider-Webbing', 1],
+    'What does this === mean?': ['Equal', 'Strictly Equal', 'Same As', 2],
+//     question: 'What symbol is used to comment in javascript?',
+//     choices: {
+//         incorrect: ['?', '!'],
+//         correct: '/',
+//     }
+// }, {
+//     question: 'What is it called when you pre-write your code?',
+//     choices: {
+//         incorrect: ['Pre-Coding', 'Spider-Webbing'],
+//         correct: 'Psuedo Coding',
+//     }
+// }, {
+//     question: 'What does this === mean?',
+//     choices: ['Similar', 'Not Equal', 'Strictly Equal'],
+//     }
+}
+
+var timerCount = document.querySelector("timer-count")
+var currentQuestion = 0
+var answer1Btn = document.querySelector("#answer1")
+var answer2Btn = document.querySelector("#answer2")
+var answer3Btn = document.querySelector("#answer3")
 
 
 // Start Game Function
