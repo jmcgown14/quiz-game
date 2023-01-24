@@ -65,8 +65,27 @@ function startTimer() {
 
 
 // Function to ask questions
+function askQuestion() {
+    var question = object.keys(allQuestion)[currentQuestion];
+    var answers = object.keys(allQuestion)[currentQuestion];
+    var answer1Text = answers[0]
+    var answer2Text = answers[1]
+    var answer3Text = answers[2]
 
+    if (currentQuestion==0) {
+        window.setTimeout(timeExpires, 40000);
+    }
+    var questionInfo= document.getElementsByClassName("questionInfo");
+    questionInfo.innerHTML = question;
+    answer1Btn.innerHTML = answer1Text;
+    answer2Btn.innerHTML = answer2Text;
+    answer3Btn.innerHTML = answer3Text;
+}
 
+function answerQuestions() {
+    currentQuestion++;
+    loadQuestion()
+}
 
 // Init function to store wins
 
