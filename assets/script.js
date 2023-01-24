@@ -5,9 +5,9 @@ var correct = document.querySelector(".correct")
 var incorrect = document.querySelector(".incorrect")
 
 var allQuestion = {
-    'What symbol is used to comment in javascript?': ['?', '/', '!', 0],
+    'What symbol is used to comment in javascript?': ['?', '/', '!', 1],
     'What is it called when you pre-write your code?': ['Psuedo Coding', 'Pre-Coding', 'Spider-Webbing', 1],
-    'What does this === mean?': ['Equal', 'Strictly Equal', 'Same As', 2],
+    'What does this === mean?': ['Equal', 'Strictly Equal', 'Same As', 1],
 //     question: 'What symbol is used to comment in javascript?',
 //     choices: {
 //         incorrect: ['?', '!'],
@@ -33,34 +33,31 @@ var answer3Btn = document.querySelector("#answer3")
 
 
 // Start Game Function
-function startGame() {
-    timerCount = 40;
-    startTimer()
-}
+startButton.addEventListener("click", askQuestion);
 
 
 // Timer function for game
-function startTimer() {
-    // Sets timer
-    timer = setInterval(function () {
-        timerCount--;
-        onScreenTimer.textContent = timerCount;
-        if (timerCount >= 0) {
-            // Tests if win condition is met
-            if (isWin && timerCount > 0) {
-                // Clears interval and stops timer
-                clearInterval(timer);
-                winGame();
-            }
-        }
-        // Tests if time has run out
-        if (timerCount === 0) {
-            // Clears interval
-            clearInterval(timer);
-            loseGame();
-        }
-    }, 4000);
-}
+// function startTimer() {
+//     // Sets timer
+//     timer = setInterval(function () {
+//         timerCount--;
+//         onScreenTimer.textContent = timerCount;
+//         if (timerCount >= 0) {
+//             // Tests if win condition is met
+//             if (isWin && timerCount > 0) {
+//                 // Clears interval and stops timer
+//                 clearInterval(timer);
+//                 winGame();
+//             }
+//         }
+//         // Tests if time has run out
+//         if (timerCount === 0) {
+//             // Clears interval
+//             clearInterval(timer);
+//             loseGame();
+//         }
+//     }, 4000);
+// }
 
 
 
@@ -84,9 +81,52 @@ function askQuestion() {
 
 function answerQuestions() {
     currentQuestion++;
-    loadQuestion()
+    askQuestion()
 }
 
+function selectAnswer1 (){
+    var answers = Object.values(allQuestions)[currentQuestion];
+    var correctAnswer = answers[1];
+    var correct = false;
+    if (correctAnswer == 0) {
+        correct = true;
+    }
+    alert('correct '+ correct);
+    answerQuestions();
+}
+
+function selectAnswer2 (){
+    var answers = Object.values(allQuestions)[currentQuestion];
+    var correctAnswer = answers[1];
+    var correct = false;
+    if (correctAnswer == 0) {
+        correct = true;
+    }
+    alert('correct '+ correct);
+    answerQuestions();
+}
+
+function selectAnswer3 (){
+    var answers = Object.values(allQuestions)[currentQuestion];
+    var correctAnswer = answers[1];
+    var correct = false;
+    if (correctAnswer == 0) {
+        correct = true;
+    }
+    alert('correct '+ correct);
+    answerQuestions();
+}
+
+
+
+
+
+
+
+answer1Button.addEventListener("click", selectAnswer1);
+answer2Button.addEventListener("click", selectAnswer2);
+answer3Button.addEventListener("click", selectAnswer3);
+answer4Button.addEventListener("click", selectAnswer4);
 // Init function to store wins
 
 
