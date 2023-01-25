@@ -1,3 +1,4 @@
+var homebtn = document.querySelector('home-button')
 var storage = JSON.parse(localStorage.getItem('quizScores'))
 var scoresContainer = document.querySelector('.scores')
 

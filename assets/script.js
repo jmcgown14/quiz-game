@@ -4,14 +4,17 @@ var startButton = document.querySelector(".start-button")
 var correct = document.querySelector(".correct")
 var incorrect = document.querySelector(".incorrect")
 var mainContainer = document.querySelector('.main')
+var cardTimer = document.querySelector('.cardTimer')
+var gameContainer = document.querySelector('.hide')
+var gameCard = document.querySelector('.gameCard')
 
 var allQuestions = {
-    'What symbol is used to comment in javascript?': ['?', '/', '!', '?'],
+    'What symbol is used to comment in javascript?': ['?', '/', '!', '/'],
     'What is it called when you pre-write your code?': ['Psuedo Coding', 'Pre-Coding', 'Spider-Webbing', 'Psuedo Coding'],
     'What does this === mean?': ['Equal', 'Strictly Equal', 'Same As', 'Strictly Equal'],
 };
 
-var time = 200
+var time = 45
 var score = 0
 var timerCount = document.querySelector(".timer-count")
 var currentQuestion = 0
@@ -36,13 +39,19 @@ function startTimer() {
 
 function endQuiz() {
     mainContainer.textContent = ''
+    cardTimer.textContent =''
+    var h1 = document.createElement('h1')
+    var textNode = document.createTextNode('High Score')
+    h1.style.cssText += 'text-align:center'
+    h1.appendChild(textNode)
+
     var inputEl = document.createElement('input')
     inputEl.setAttribute('placeholder', 'Name')
 
     var submitBtn = document.createElement('button')
     submitBtn.textContent = "SUBMIT"
 
-    mainContainer.append(inputEl, submitBtn)
+    mainContainer.append(h1, inputEl, submitBtn)
 
     submitBtn.addEventListener('click', function() {
         var  userData = {
@@ -105,7 +114,7 @@ function selectAnswer2(event) {
         correct = true;
         score += 33
     }
-    alert('correct ' + correct+ "score: " + score);
+    alert('correct ' + correct + "score: " + score);
     answerQuestions();
 }
 
@@ -128,6 +137,8 @@ function selectAnswer3(event) {
 startButton.addEventListener("click", function () {
     startTimer()
     askQuestion()
+    gameContainer.style.display = "block"
+    gameCard.style.display = "none"
 });
 
 answer1Btn.addEventListener("click", (event) => selectAnswer1(event));
