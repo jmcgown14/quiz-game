@@ -7,3 +7,9 @@
 * When timer hits 0 or all questions are answered, game is over
 * You are presented with a screento enter your intials
 * you are then taken to the High Score table
+
+[Project Link](https://jmcgown14.github.io/quiz-game/)
+
+![Screen Shot 1](./assets/Quiz-challenge1.png "ScreenShot1")
+![Screen Shot 2](./assets/Quiz-Challenge2.png "ScreenShot2")
+![Screen Shot 3](./assets/Quiz-Challenge3.png "ScreenShot3")

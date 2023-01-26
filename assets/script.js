@@ -1,5 +1,3 @@
-// Variables for Questions, correct vs incorrect, timer, and start button
-var onScreenTimer
 var startButton = document.querySelector(".start-button")
 var correct = document.querySelector(".correct")
 var incorrect = document.querySelector(".incorrect")
@@ -22,15 +20,12 @@ var answer1Btn = document.querySelector("#answer1")
 var answer2Btn = document.querySelector("#answer2")
 var answer3Btn = document.querySelector("#answer3")
 
-// Timer function for game
 function startTimer() {
     timerCount.textContent = time
-    // Sets timer
     var timer = setInterval(function () {
         time--;
         timerCount.textContent = time;
         if (time === 0 || currentQuestion > Object.keys(allQuestions).length - 1) {
-            // Tests if win condition is met
             clearInterval(timer)
             endQuiz()
         }
@@ -129,10 +124,6 @@ function selectAnswer3(event) {
     alert('correct ' + correct+ "score: " + score);
     answerQuestions();
 }
-
-// function timeExpires (){
-//     alert('time expires');
-// }
 
 startButton.addEventListener("click", function () {
     startTimer()
